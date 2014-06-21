@@ -73,4 +73,6 @@ with(mpgData,{
 ## SourceCode
 [part0_regmods-mtcars.Rmd](https://github.com/swhgoon/devdataprod-cp/blob/master/part0_regmods-mtcars/part0_regmods-mtcars.Rmd)
 
-### The relationship between other variables and miles per gallon (MPG)
+## Relationship between other variables and miles per gallon (MPG)
+[part1_devdataprod-shiny](https://swhgoon.shinyapps.io/part1_devdataprod-shiny/)
+
