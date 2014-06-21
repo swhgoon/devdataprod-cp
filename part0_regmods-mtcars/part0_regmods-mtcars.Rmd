@@ -3,10 +3,10 @@ title: "Automatic or Manual transmission better for MPG"
 author: "SwhGo_oN"
 date: "June 26, 2014"
 output:
-  html_document:
+  pdf_document:
     number_sections: yes
     toc: yes
-  pdf_document:
+  html_document:
     number_sections: yes
     toc: yes
 ---
@@ -27,11 +27,13 @@ and techniques about regression models is used to solve the following two questi
 
 ## Load and Test Data
 
+> The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).
+
 ```{r cache=TRUE}
 library(datasets)
 mpgData <- with(mtcars, data.frame(mpg, am))
 mpgData$am <- factor(mpgData$am, labels = c("Automatic", "Manual"))
-summary(mpgData)
+#summary(mpgData)
 ```
 
 ## Process Data
@@ -47,7 +49,7 @@ summary(mpgData[mpgData$am == "Manual",])
 
 ```{r cache=TRUE}
 fit <- lm(mpg ~ as.integer(am), data=mpgData)
-coef(fit)
+summary(fit)
 ```
 
 # Results
@@ -55,8 +57,7 @@ So, manual transmission is better than automatic for MPG, which increased by `r 
 
 # Appendix
 
-## Appendix 1
-Fig 1. MPG between automatic and manual transmissions
+## Fig 1. MPG between automatic and manual transmissions
 ```{r cache=TRUE}
 par(mfrow=c(1,2))
 with(mpgData,{
@@ -69,9 +70,7 @@ with(mpgData,{
      })
 ```
 
-## Appendix 2
-
-### SourceCode
-https://github.com/swhgoon/devdataprod-cp
+## SourceCode
+[part0_regmods-mtcars.Rmd](https://github.com/swhgoon/devdataprod-cp/blob/master/part0_regmods-mtcars/part0_regmods-mtcars.Rmd)
 
 ### The relationship between other variables and miles per gallon (MPG)
