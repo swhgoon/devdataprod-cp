@@ -35,16 +35,25 @@ git clone https://github.com/swhgoon/devdataprod-cp.git
 
 ## mtcars dataset - Description
 
-```r
-library(datasets)
-```
-
 ### Motor Trend Car Road Tests
 
 > The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).
 
 ### Source
-Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391–411.
+> Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391–411.
+
+
+```r
+library(datasets)
+head(mtcars, 3)
+```
+
+```
+##                mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4     21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag 21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710    22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+```
 
 ---
 
