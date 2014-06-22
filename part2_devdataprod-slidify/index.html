@@ -241,21 +241,7 @@
   <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
 <script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
 
-  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        processEscapes: true
-      }
-    });
-  </script>
-  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script> -->
-  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
-</script>
-<script>  
+  <script>  
   $(function (){ 
     $("#example").popover(); 
     $("[rel='tooltip']").tooltip(); 
