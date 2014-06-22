@@ -63,6 +63,7 @@ ____
 * It must be on github
 * It must contained some embedded R code that gets run when slidifying the document
 
-2
+Done and deployed in Github:
+[part2_devdataprod-slidify](http://swhgoon.github.io/devdataprod-cp/part2_devdataprod-slidify)
 
 ____
