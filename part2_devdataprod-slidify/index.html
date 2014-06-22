@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Relationship between variables and MPG</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Relationship between variables and MPG">
+  <meta name="author" content="SwhGo_oN">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/logo.jpg">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Relationship between variables and MPG</h1>
+    <h2>mtcars dataset</h2>
+    <p>SwhGo_oN<br/>Part2 - Reproducible Pitch Presentation</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Deployed App</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Part0: Regression Models Course Project</h3>
+
+<ul>
+<li>URL: <em><a href="http://swhgoon.github.io/devdataprod-cp/part0_regmods-mtcars.html">http://swhgoon.github.io/devdataprod-cp/part0_regmods-mtcars.html</a></em></li>
+<li>Difference of the MPG between automatic and manual transmissions is focused in Part0.</li>
+</ul>
+
+<h3>Part1: Shiny Application</h3>
+
+<ul>
+<li>URL: <em><a href="https://swhgoon.shinyapps.io/part1_devdataprod-shiny/">https://swhgoon.shinyapps.io/part1_devdataprod-shiny/</a></em></li>
+<li>A shiny-App shows the relationship between variables and miles per gallon (MPG).</li>
+</ul>
+
+<h3>Part2: Reproducible Pitch Presentation</h3>
+
+<ul>
+<li>URL: <em><a href="https://swhgoon.shinyapps.io/part2_devdataprod-slidify/">https://swhgoon.shinyapps.io/part2_devdataprod-slidify/</a></em></li>
+</ul>
+
+<h3>Get all SourceCode @Github:</h3>
+
+<pre><code>git clone https://github.com/swhgoon/devdataprod-cp.git
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>mtcars dataset - Description</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(datasets)
+</code></pre>
+
+<h3>Motor Trend Car Road Tests</h3>
+
+<blockquote>
+<p>The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).</p>
+</blockquote>
+
+<h3>Source</h3>
+
+<p>Henderson and Velleman (1981), Building multiple regression models interactively. Biometrics, 37, 391–411.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>mtcars dataset - Format</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><strong>A data frame with 32 observations on 11 variables.</strong></p>
+
+<table><thead>
+<tr>
+<th>Index</th>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>[, 1]</td>
+<td>mpg</td>
+<td>Miles/(US) gallon</td>
+</tr>
+<tr>
+<td>[, 2]</td>
+<td>cyl</td>
+<td>Number of cylinders</td>
+</tr>
+<tr>
+<td>[, 3]</td>
+<td>disp</td>
+<td>Displacement (cu.in.)</td>
+</tr>
+<tr>
+<td>[, 4]</td>
+<td>hp</td>
+<td>Gross horsepower</td>
+</tr>
+<tr>
+<td>[, 5]</td>
+<td>drat</td>
+<td>Rear axle ratio</td>
+</tr>
+<tr>
+<td>[, 6]</td>
+<td>wt</td>
+<td>Weight (lb/1000)</td>
+</tr>
+<tr>
+<td>[, 7]</td>
+<td>qsec</td>
+<td>1/4 mile time</td>
+</tr>
+<tr>
+<td>[, 8]</td>
+<td>vs</td>
+<td>V/S</td>
+</tr>
+<tr>
+<td>[, 9]</td>
+<td>am</td>
+<td>Transmission (0 = automatic, 1 = manual)</td>
+</tr>
+<tr>
+<td>[,10]</td>
+<td>gear</td>
+<td>Number of forward gears</td>
+</tr>
+<tr>
+<td>[,11]</td>
+<td>carb</td>
+<td>Number of carburetors</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Analysis - main code</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">  formulaTextPoint &lt;- reactive({
+    paste(&quot;mpg ~&quot;, &quot;as.integer(&quot;, input$variable, &quot;)&quot;)  })
+
+  fit &lt;- reactive({
+    lm(as.formula(formulaTextPoint()), data=mpgData)  })
+  ...
+  output$fit &lt;- renderPrint({
+    summary(fit()) })
+
+  output$mpgPlot &lt;- renderPlot({
+    with(mpgData, {
+      plot(as.formula(formulaTextPoint()))
+      abline(fit(), col=2)
+    })  })
+
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Deployed App'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='mtcars dataset - Description'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='mtcars dataset - Format'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Analysis - main code'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
