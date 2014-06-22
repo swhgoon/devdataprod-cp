@@ -28,6 +28,7 @@ and techniques about regression models is used to solve the following two questi
 * “Is an automatic or manual transmission better for MPG”
 *  “Quantifying how different is the MPG between automatic and manual transmissions?”
 
+[part0_regmods-mtcars](http://swhgoon.github.io/devdataprod-cp/part0_regmods-mtcars.html)
 
 ____
 ## Part1: Shiny Application  
@@ -44,10 +45,11 @@ ____
 4. You must also include enough documentation so that a novice user could use your application.
 5. The documentation should be at the Shiny website itself. Do not post to an external link.
 
-1
+Done and deployed in shinyapps.io:
+[part1_devdataprod-shiny](https://swhgoon.shinyapps.io/part1_devdataprod-shiny/)
 
 ____
-##Part2: Reproducible Pitch Presentation  
+## Part2: Reproducible Pitch Presentation  
 > OK, you've made your shiny app, now it's time to make your pitch. You get 5 slides (inclusive of the title slide)  to pitch a your app. You're going to create a web page using Slidify with an html5 slide deck.
 
 > **Here's what you need**  

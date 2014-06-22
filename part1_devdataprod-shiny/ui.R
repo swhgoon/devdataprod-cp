@@ -30,7 +30,7 @@ shinyUI(
              ),
              tabPanel("Analysis",
                       fluidPage(
-                        titlePanel("The relationship between other variables and miles per gallon (MPG)"),
+                        titlePanel("The relationship between variables and miles per gallon (MPG)"),
                         sidebarLayout(
                           sidebarPanel(
                             selectInput("variable", "Variable:",
@@ -66,6 +66,13 @@ shinyUI(
              tabPanel("SourceCode",
                       p("part1_devdataprod-shiny"),
                       a("https://github.com/swhgoon/devdataprod-cp/tree/master/part1_devdataprod-shiny")
-                      )
+             ),
+             tabPanel("Special",
+                      a("http://swhgoon.github.io/devdataprod-cp/part0_regmods-mtcars.html"),
+                      hr(),
+                      tags$iframe(src="part0_regmods-mtcars.html", 
+                                  width="100%", height=600, frameborder=0, 
+                                  seamless=NA)
+             )
   )
 )
